@@ -437,8 +437,9 @@ class MobiBook:
         if 406 in self.meta_array:
             data406 = self.meta_array[406]
             val406, = struct.unpack('>Q',data406)
-            if val406 != 0:
-                raise DrmException(u"Cannot decode library or rented ebooks.")
+#            Allow removal of Amazon rental DRMs as per https://forum.appaddict.org/index.php?/topic/4062-remove-drm-from-amazon-kindle-ebook-rental-with-apprentice-alfs-tools-modded-windows-mac-linux/            
+#            if val406 != 0:
+#                raise DrmException(u"Cannot decode library or rented ebooks.")
 
         goodpids = []
         for pid in pidlist:
